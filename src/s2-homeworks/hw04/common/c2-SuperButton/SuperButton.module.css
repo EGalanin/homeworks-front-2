@@ -1,36 +1,74 @@
 .button {
+    width: 130px;
+    height: 30px;
+    padding: 5px 24px 5px 24px;
+    gap: 10px;
+    border-radius: 3px;
 }
 
 .disabled {
+    background: #004D99;
+    opacity: 0.5;
 }
 
 .secondary {
+    border: 1px solid #0066CC
 }
 
 .default {
+    background: #0066CC;
+
 }
 
 .red {
+    background: #CC1439;
+
 }
 
 .default:hover {
+    width: 167px;
+    height: 30px;
+    padding: 5px 24px 5px 24px;
+    gap: 10px;
+    border-radius: 3px;
+
 }
 
 .red:hover {
+    width: 167px;
+    height: 30px;
+    padding: 5px 24px 5px 24px;
+    gap: 10px;
+    border-radius: 3px;
+
 }
 
 .secondary:hover {
+    width: 167px;
+    height: 30px;
+    padding: 5px 24px 5px 24px;
+    gap: 10px;
+    border-radius: 3px;
 }
 
 
 .default:active {
+    border: 2px solid rebeccapurple;
+    /*Class="Primary";*/
+    /*Icon="No";*/
+    /*Color="Accent";*/
+
 }
 
 .secondary:active {
+    border: 2px solid rebeccapurple;
 }
 
 .red:active {
+    border: 2px solid rebeccapurple;
+
 }
 
 .button:disabled {
+
 }

@@ -1,7 +1,11 @@
 .input:focus {
+    border: 2px solid rebeccapurple;
 }
 
 .input {
+    width: 372px;
+    height: 36px;
+    gap: 0px;
 }
 
 .inputWrapper {
@@ -11,10 +15,17 @@
 }
 
 .errorInput {
+    /*background: #CC1439;*/
+    border: 3px solid #CC1439;
+    border-radius: 3px;
+
+
 }
 
 .errorInput:focus {
 }
 
 .error {
+    color: #CC1439;
+
 }
