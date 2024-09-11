@@ -1,8 +1,27 @@
 .burgerMenuIcon {
+    width: 30px; /* Ширина иконки бургера */
+    height: 30px; /* Высота иконки бургера */
+    cursor: pointer; /* Указываем, что элемент кликабельный */
+    transition: transform 0.3s; /* Плавный переход для эффекта при наведении */
+}
+
+.burgerMenuIcon:hover {
+    transform: scale(1.1); /* Увеличиваем иконку при наведении */
 }
 
 .header {
+    display: flex; /* Используем flexbox для выравнивания элементов */
+    align-items: center; /* Центрируем элементы по вертикали */
+    justify-content: space-between; /* Распределяем пространство между элементами */
+    padding: 10px 20px; /* Добавляем отступы */
+    background-color: white; /* Цвет фона заголовка */
+    color: black; /* Цвет текста */
+    border: 1px solid #65696b;
 }
 
 .header h1 {
+    font-size: 24px; /* Размер шрифта заголовка */
+    margin: 0; /* Убираем отступы */
+    font-weight: normal; /* Нормальный вес шрифта */
+    text-align: center; /* Центрируем текст */
 }
