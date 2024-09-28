@@ -1,9 +1,27 @@
 .select {
+    /* Базовые стили для элемента <select> */
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 120px; /* Задайте нужную ширину */
 }
 
 .select:focus {
+    /* Стили для элемента <select> при фокусе */
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
+.option {
+    /* Базовые стили для элементов <option> */
+    padding: 4px 8px;
+    font-size: 16px;
+}
 
 .option:hover {
+    /* Стили для элементов <option> при наведении курсора */
+    background-color: #f5f5f5;
 }
