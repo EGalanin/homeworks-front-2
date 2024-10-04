@@ -1,5 +1,5 @@
-import React, {useState} from 'react'
-import {homeWorkReducer} from './bll/homeWorkReducer'
+import React, {useReducer, useState} from 'react'
+import {filterByAgeAC, homeWorkReducer, sortByNameAC} from './bll/homeWorkReducer'
 import s from './HW8.module.css'
 import s2 from '../../s1-main/App.module.css'
 import SuperButton from '../hw04/common/c2-SuperButton/SuperButton'
@@ -17,7 +17,7 @@ export type UserType = {
     age: number
 }
 
-const initialPeople: UserType[] = [
+export const initialPeople: UserType[] = [
     // студенты могут поменять имя/возраст/количество объектов, _id должны быть целочисленные
     {_id: 0, name: 'Кот', age: 3},
     {_id: 1, name: 'Александр', age: 66},
@@ -28,28 +28,35 @@ const initialPeople: UserType[] = [
 ]
 
 const HW8 = () => {
-    const [people, setPeople] = useState<UserType[]>(initialPeople)
+    const [people, dispatch] = useReducer(homeWorkReducer, initialPeople)
+
+    // const [people, setPeople] = useState<UserType[]>(initialPeople)
     const [currentSort, setCurrentSort] = useState('')
+
+    console.log(people)
 
     const finalPeople = people.map((u: UserType) => <User key={u._id} u={u}/>)
 
     const sortUp = () => {
-        setPeople(
-            homeWorkReducer(initialPeople, {type: 'sort', payload: 'up'})
-        ) // в алфавитном порядке a.name > b.name
+        dispatch(sortByNameAC('up'))
+        // setPeople(
+        //     homeWorkReducer(initialPeople, {type: 'sort', payload: 'up'})
+        // ) // в алфавитном порядке a.name > b.name
         setCurrentSort('up')
     }
 
     const sortDown = () => {
-        setPeople(
-            homeWorkReducer(initialPeople, {type: 'sort', payload: 'down'})
-        ) // в обратном порядке a.name < b.name}
+        dispatch(sortByNameAC('down'))
+        // setPeople(
+        //     homeWorkReducer(initialPeople, {type: 'sort', payload: 'down'})
+        // ) // в обратном порядке a.name < b.name}
         setCurrentSort('down')
     }
     const check18 = () => {
-        setPeople(
-            homeWorkReducer(initialPeople, {type: 'check', payload: 18})
-        ) // совершеннолетние
+        dispatch(filterByAgeAC(18))
+        // setPeople(
+        //     homeWorkReducer(initialPeople, {type: 'check', payload: 18})
+        // ) // совершеннолетние
         setCurrentSort('18')
     }
 
