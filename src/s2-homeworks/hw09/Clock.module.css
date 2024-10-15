@@ -1,14 +1,39 @@
 .buttonsContainer {
+    display: flex; /* Используем flexbox для выравнивания кнопок */
+    justify-content: center; /* Центрируем кнопки по горизонтали */
+    margin: 20px 0; /* Отступы сверху и снизу */
+    opacity: 0.8; /* Прозрачность контейнера */
 }
 
 .clock {
+    font-size: 2em; /* Увеличенный размер шрифта для часов */
+    color: #333; /* Темно-серый цвет текста */
+    text-align: center; /* Центрируем текст */
+    margin: 20px 0; /* Отступы сверху и снизу */
 }
 
 .watch {
+    background-color: #f0f0f0; /* Светло-серый фон */
+    border: 1px solid #ccc; /* Светло-серая рамка */
+    border-radius: 10px; /* Скругленные углы */
+    padding: 10px; /* Внутренние отступы */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Легкая тень */
 }
 
 .watch strong {
+    font-weight: bold; /* Увеличиваем жирность текста */
+    color: #007bff; /* Синий цвет для выделения */
 }
 
 .more {
+    font-size: 0.9em; /* Размер шрифта чуть меньше основного */
+    color: #555; /* Серый цвет текста */
+    margin-top: 10px; /* Отступ сверху */
+    text-align: center; /* Центрируем текст */
+    cursor: pointer; /* Курсор в виде указателя при наведении */
+    transition: color 0.3s; /* Плавный переход цвета */
+}
+
+.more:hover {
+    color: #007bff; /* Изменяем цвет при наведении */
 }
