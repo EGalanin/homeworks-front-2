@@ -1,3 +1,22 @@
+/*.loader {*/
+/*    !*свг и/или анимация*!*/
+/*}*/
+
 .loader {
-    /*свг и/или анимация*/
+    position: absolute;
+    top: 50px;
+    left: 150px;
+
+    border: 8px solid #f3f3f3; /* Светлый фон */
+    border-top: 8px solid #3498db; /* Синий цвет */
+    border-radius: 50%; /* Круглая форма */
+    width: 60px; /* Ширина */
+    height: 60px; /* Высота */
+    animation: spin 1s linear infinite; /* Анимация вращения */
+    margin: 100px auto; /* Центрирование */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
