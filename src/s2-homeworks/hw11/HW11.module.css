@@ -1,8 +1,40 @@
 .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 800px;
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
 }
 
 .wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 10px 0;
+    width: 100%;
 }
 
 .number {
+    font-size: 20px;
+    margin: 0 10px;
+    color: #333;
+    font-weight: bold;
+    min-width: 40px;
+    text-align: center;
+}
+
+.hwTitle {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.hw {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
