@@ -47,47 +47,74 @@ const HW15 = () => {
     const [searchParams, setSearchParams] = useSearchParams()
     const [techs, setTechs] = useState<TechType[]>([])
 
-    const sendQuery = (params: any) => {
+    const sendQuery = (params: ParamsType) => {
         setLoading(true)
+        const getTechs = (params: ParamsType): Promise<{ techs: TechType[], totalCount: number }> => {
+            return axios
+                .get<{ techs: TechType[], totalCount: number }>(
+                    'https://samurai.it-incubator.io/api/3.0/homework/test3',
+                    { params }
+                )
+                .then(response => response.data)
+                .catch(e => {
+                    alert(e.response?.data?.errorText || e.message);
+                    throw e;
+                });
+        }
+
         getTechs(params)
-            .then((res) => {
-                // делает студент
-
-                // сохранить пришедшие данные
-
-                //
+            .then((data) => {
+                console.log(data.techs)
+                setTechs(data.techs);
+                setTotalCount(data.totalCount);
             })
+            .catch((error) => {
+                // Обработка ошибок уже выполнена в getTechs
+            })
+            .finally(() => {
+                setLoading(false);
+            });
+        // getTechs(params)
+        //     .then((res) => {
+        //         setTechs(res.data.techs)
+        //         setTotalCount(res.data.totalCount)
+        //     })
+        //     .catch((error) => {
+        //         alert(error.response?.data?.errorText || error.message); // Обработка ошибок
+        //     })
+        //     .finally(() => {
+        //         setLoading(false); // Остановка загрузки
+        //     });
     }
 
     const onChangePagination = (newPage: number, newCount: number) => {
+        setPage(newPage)
+        setCount(newCount)
+        sendQuery({page: newPage, count: newCount, sort: ''})
+        setSearchParams({page: newPage.toString(), count: newCount.toString()});
         // делает студент
-
-        // setPage(
-        // setCount(
-
-        // sendQuery(
-        // setSearchParams(
-
-        //
     }
 
     const onChangeSort = (newSort: string) => {
+        setSort(newSort);
+        setPage(1); // при сортировке сбрасывать на 1 страницу
+        sendQuery({page: 1, count: count, sort: newSort});
+        setSearchParams({page: '1', count: count.toString(), sort: newSort});
         // делает студент
-
-        // setSort(
-        // setPage(1) // при сортировке сбрасывать на 1 страницу
-
-        // sendQuery(
-        // setSearchParams(
-
-        //
     }
 
     useEffect(() => {
         const params = Object.fromEntries(searchParams)
-        sendQuery({page: params.page, count: params.count})
-        setPage(+params.page || 1)
-        setCount(+params.count || 4)
+
+        const page = +params.page || 1;
+        const count = +params.count || 4;
+        const sort = params.sort || '';
+
+
+        sendQuery({page,count,sort})
+        setPage(page)
+        setCount(count)
+        setSort(sort)
     }, [])
 
     const mappedTechs = techs.map(t => (

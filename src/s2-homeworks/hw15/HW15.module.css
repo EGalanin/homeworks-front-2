@@ -1,27 +1,59 @@
+/* HW15.module.css */
+
 .tech {
     width: 50vw;
+    padding: 10px;
+    border: 1px solid #ccc; /* Добавляем границу для визуального разделения */
+    border-radius: 5px; /* Закругляем углы */
+    background-color: #f9f9f9; /* Светлый фон для tech */
+    margin-bottom: 10px; /* Отступ снизу для разделения элементов */
 }
 
 .developer {
-
+    width: 50vw;
+    padding: 10px;
+    border: 1px solid #ccc; /* Аналогично, добавляем границу */
+    border-radius: 5px; /* Закругляем углы */
+    background-color: #f0f0f0; /* Чуть более темный фон для developer */
+    margin-bottom: 10px; /* Отступ снизу для разделения элементов */
 }
 
 .techHeader {
     width: 50vw;
+    font-weight: bold; /* Делаем текст заголовка жирным */
+    background-color: #ececec; /* Светло-серый фон для заголовков */
+    padding: 10px; /* Отступ для заголовков */
+    border-bottom: 2px solid #bbb; /* Граница снизу для разделения заголовка и контента */
 }
 
 .developerHeader {
-
+    width: 50vw;
+    font-weight: bold; /* Делаем текст заголовка жирным */
+    background-color: #ececec; /* Светло-серый фон для заголовков */
+    padding: 10px; /* Отступ для заголовков */
+    border-bottom: 2px solid #bbb; /* Граница снизу для разделения заголовка и контента */
 }
 
 .row {
     display: flex;
+    justify-content: space-between; /* Разделяем элементы по краям */
 }
 
 .rowHeader {
     display: flex;
+    justify-content: space-between; /* Разделяем заголовки по краям */
+    margin-bottom: 10px; /* Отступ снизу для отделения заголовков от контента */
 }
 
 .loading {
+    text-align: center; /* Центрируем текст загрузки */
+    font-size: 18px; /* Увеличиваем размер шрифта */
+    color: #555; /* Темно-серый цвет для текста загрузки */
+    margin: 20px 0; /* Отступ сверху и снизу */
+}
 
+.icon {
+    width: 20px;
+    height: 20px;
+    margin-left: 20px;
 }
